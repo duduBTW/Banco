@@ -1,3 +1,4 @@
+import 'package:banco/views/BalancePage.dart';
 import 'package:banco/views/registro/Sucesso.dart';
 import 'package:banco/views/registro/dados.dart';
 import 'package:flutter/material.dart';
@@ -33,16 +34,25 @@ class _MyAppState extends State<MyApp> {
               headline1: TextStyle(
                   color: Colors.white,
                   fontSize: 22,
+                  fontWeight: FontWeight.bold),
+              headline6: TextStyle(
+                  color: Colors.grey[400],
+                  fontSize: 14,
+                  fontWeight: FontWeight.normal),
+              headline5: TextStyle(
+                  color: Colors.white,
+                  fontSize: 18,
                   fontWeight: FontWeight.bold)),
           primarySwatch: Colors.red,
           primaryColor: Color(0xffba0000),
           backgroundColor: Colors.grey[900]),
       // initialRoute: widget.logedIn ? '/home' : '/login',
-      home: widget.logedIn ? NetworkingPage() : Login(widget.logedIn, _logIn),
+      home: widget.logedIn ? BalancePage() : Login(widget.logedIn, _logIn),
       routes: {
         // When navigating to the "/" route, build the FirstScreen widget.
         '/login': (context) => Login(widget.logedIn, _logIn),
         '/home': (context) => NetworkingPage(),
+        '/balance': (context) => BalancePage(),
         // When navigating to the "/second" route, build the SecondScreen widget.
         // '/register': (context) => Register(),
       },
